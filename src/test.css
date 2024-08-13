@@ -1,0 +1,22 @@
+.reddit-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.reddit-box-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reddit-box-content {
+  margin-bottom: 10px;
+}
+
+.reddit-box-footer {
+  display: flex;
+  justify-content: space-between;
+}
