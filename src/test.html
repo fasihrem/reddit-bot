@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="reddit.css">
+    </head>
+
+    <body>
+        <div class = "posts-box">
+            <div class = "main-box">
+                <img class = "reddit-logo" src="icons/reddit-logo.svg">
+                <div class = "top-box">
+                    <p>
+                        <span class="author">
+                            @Past-Doubt1421 ·
+                        </span>
+
+                        <span class="time"> 1h </span>
+                    </p>
+
+                    <p>
+                        <span class="title">
+                            Perks of being a social media couple
+                        </span>
+                    </p>
+
+                    <p>
+                        <span class="content">
+                            So eefrah and shahrukh got divorce. This just shows social media is fake af.
+                        </span>
+                    </p>
+
+
+                    <button type="button" class="comments-button">
+                        <img src="icons/arrow-right.png" class="comments-arrow" id="comments-image">
+                        Show Comments
+                    </button>
+
+                </div>
+
+                <div class="comments" id="comments-section">
+                    <p>
+                        <span class = comment-1>
+                            Who the f are these two? Never heard their names before
+                            <br>
+                        </span>
+
+                        <span class = comment-2>
+                            i miss taklu
+                            <br>
+                        </span>
+
+                        <span class="comment-3">
+                            This just shows social media is fake af Always has been. Those who follow these cringy couples are only deluding themselves with unrealistic expectations. Social media couples are as fake as they can get. Showing just the good things that people wanna see for chasing clout and leaving out the problems which actually exist behind doors. No sane person should ever follow them lol. People got way too much time on their hands following these wannabes and giving them millions of followers.
+                            <br>
+                        </span>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        const button = document.querySelector('.comments-button');
+        const comments = document.querySelector('.comments');
+        const img = document.querySelector('.comments-arrow');
+
+        const comment1 = document.querySelector('.comment-1');
+        const comment2 = document.querySelector('.comment-2');
+        const comment3 = document.querySelector('.comment-3');
+
+        // comments.style.transition = 'opacity 0.3s ease-in-out';
+        comment1.style.transition = 'opacity 0.3s ease-in-out';
+        comment2.style.transition = 'opacity 0.5s ease-in-out';
+        comment3.style.transition = 'opacity 0.7s ease-in-out';
+
+        button.addEventListener('click', () => {
+            comments.style.display = comments.style.display === 'block' ? 'none' : 'block';
+            comments.style.opacity = comments.style.opacity === '1' ? '0' : '1';
+
+            img.style.transform = img.style.transform === 'rotate(90deg)' ? 'rotate(0deg)' : 'rotate(90deg)';
+        });
+    </script>
+
+    </body>
+</html>

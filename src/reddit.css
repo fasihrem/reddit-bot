@@ -1,0 +1,131 @@
+html,
+body{
+    font-family: Inter;
+}
+
+.posts-box{
+    padding-left: 25%;
+    padding-top: 25%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    bottom: 0px;
+    width: 680px;
+    padding-right: 0px;
+    /*height: 1000px;*/
+
+}
+
+.main-box{
+    width: 650px;
+    /*height: 195px;*/
+    height: auto;
+    /*background-color: purple;*/
+    background: linear-gradient(to bottom right, #ffffff, #ecebeb);
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.author{
+    font-size: 16px;
+    font-weight: bold;
+    color: #717171;
+}
+
+.time{
+    font-size: 14px;
+    color: #717171;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.content{
+    font-size: 16px;
+    color: #717171;
+    font-weight: bold;
+    width: 200px;
+    text-align: justify;
+}
+
+
+.top-box {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    width: 600px;
+
+}
+
+p{
+    margin: 6px;
+}
+
+img.reddit-logo{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 15px;
+    float: right;
+}
+
+.comments-arrow{
+    width: 14px;
+    height: 14px;
+    /*margin-left: 15px;*/
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.comments{
+    /*display: none;*/
+    font-size: 14px;
+    color: #717171;
+    text-align: justify;
+    font-weight: bold;
+    /*padding-top: 15px;*/
+    padding-left: 25px;
+    padding-bottom: 15px;
+    padding-right: 10px;
+}
+
+#comments-image{
+      transition: transform 0.3s ease-in-out; /* Add smooth transition */
+}
+
+#comments-section{
+    transition: opacity 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.bullet-points{
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+}
+
+button{
+    background-color: transparent;
+    color: #717171;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.download-csv{
+    color: black;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 500px;*/
+}
