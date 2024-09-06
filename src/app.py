@@ -39,7 +39,7 @@ def scrapHot(subreddit, limit, df2):
 
     print(df2.head())
     print(df2['postUrl'])
-    df2.to_csv('data.csv', index=False)
+    df2.to_csv('/Users/fasihrem/Downloads/reddit-bot/public/data.csv', index=False)
     # return jsonify({"message": "Data processed successfully!"}), 200
     print("Data processed successfully!")
 
@@ -69,7 +69,7 @@ def scrapTop(subreddit, limit, df2):
         }, ignore_index=True)
         print("inside loop")
 
-    df2.to_csv('data.csv', index=False)
+    df2.to_csv('/Users/fasihrem/Downloads/reddit-bot/public/data.csv', index=False)
     # return jsonify({"message": "Data processed successfully!"}), 200
     print("Data processed successfully!")
 
@@ -99,7 +99,7 @@ def scrapNew(subreddit, limit, df2):
         }, ignore_index=True)
         print("inside loop")
 
-    df2.to_csv('data.csv', index=False)
+    df2.to_csv('/Users/fasihrem/Downloads/reddit-bot/public/data.csv', index=False)
     # return jsonify({"message": "Data processed successfully!"}), 200
     print("Data processed successfully!")
 
@@ -149,9 +149,9 @@ def receive_data():
 def sendData():
     try:
         print("Sending data")
-        df = pd.read_csv('data.csv')
+        df = pd.read_csv('/Users/fasihrem/Downloads/reddit-bot/public/data.csv')
         # print(df.head())
-        print(df.columns)
+        # print(df.columns)
         return df.to_json(orient='records'), 200
     except Exception as e:
         print(f"Error processing data: {e}")

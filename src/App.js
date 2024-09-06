@@ -1,8 +1,9 @@
-import './App.css';
 import react, {useEffect, useRef, useState} from "react";
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import * as THREE from "three";
+
+import './main-page.css'
 
 const App = () => {
   const [sort, setSort] = useState('');
@@ -19,17 +20,17 @@ const App = () => {
       const response = await axios.post('http://127.0.0.1:5000/run_code', {sort, limit, subreddit});
       console.log(response.data)
 
-    // Redirect after successful response
-      navigate('/new-page');
+      // Redirect after successful response
+      navigate('/display');
 
-  }
+    }
     catch (error) {
       console.error(error);
     }
     finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-};
+  };
 
   const refContainer = useRef(null);
   useEffect(() => {
@@ -59,43 +60,50 @@ const App = () => {
     };
 
     animate();
-}, []);
+  }, []);
 
   return (
       <div>
-        <h1>Automatic Reddit Scrapper</h1>
+          <h1>Automatic Reddit Scrapper</h1>
 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="sort">HOT/TOP/NEW:</label>
-          <input type="text"
-                 id="sort"
-                 name="sort"
-                 value={sort}
-                 onChange={(event) => setSort(event.target.value)}
-          />
+          <div className="input-form">
+              <form onSubmit={handleSubmit}>
+                  <label htmlFor="sort"><b>Type: </b></label>
+                  <input type="text"
+                         id="sort"
+                         name="sort"
+                         placeholder="hot/top/new"
+                         value={sort}
+                         onChange={(event) => setSort(event.target.value)}
+                  />
 
-          <label htmlFor="limit">Number of items:</label>
-          <input type="number"
-                 id="limit"
-                 name="limit"
-                 value={limit}
-                 onChange={(event) => setLimit(event.target.value)}
-          />
+                  <label htmlFor="limit"><b> Number of Docs: </b></label>
+                  <input type="number"
+                         id="limit"
+                         name="limit"
+                         placeholder="10"
+                         value={limit}
+                         onChange={(event) => setLimit(event.target.value)}
+                  />
+                  <br/><br/>
 
-          <label htmlFor="subreddit">Subreddit:</label>
-          <input type="text"
-                 id="subreddit"
-                 name="subreddit"
-                 value={subreddit}
-                 onChange={(event) => setSubreddit(event.target.value)}
-          />
+                  <label htmlFor="subreddit"><b>Subreddit: </b></label>
+                  <input type="text"
+                         id="subreddit"
+                         name="subreddit"
+                         placeholder="wallstreetbets"
+                         value={subreddit}
+                         onChange={(event) => setSubreddit(event.target.value)}
+                  />
 
-          <button type="submit">Click Me!</button>
-        </form>
+                  <br/><br/>
+                  <button type="submit" className="submit-button">Get thy data</button>
+              </form>
 
-        {isLoading && (
-            <div className="loading-screen" ref={refContainer}></div>
-        )}
+              {isLoading && (
+                  <div className="loading-screen" ref={refContainer}></div>
+              )}
+          </div>
       </div>
   );
 };
